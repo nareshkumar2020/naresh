@@ -5,16 +5,20 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <link rel="icon" href="/avatar.ico">
+    <link rel="icon" href="avatar.ico">
     <title>Vanilla JS App</title>
-    <link href="/css/" rel="preload" as="style">
-    <link href="/js/" rel="preload" as="script">
+
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;600&display=swap" rel="stylesheet">
     <style>
-        .body {
+        :root {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            height: 100%;
             margin: 0px;
         }
 
@@ -31,22 +35,26 @@
             display: flex;
             position: sticky;
             top: 0;
+            height: 10vh;
             justify-content: space-evenly;
-            padding: 10px;
+            align-items: center;
             color: #42b983;
-            background: #fdfdfd;
+            background: #2badbd;
         }
 
         .nav-item {
-            padding: 15px;
-            border-radius: 4px;
+            /* padding: 15px;
+            border-radius: 4px; */
+            color: white;
+            text-decoration: none;
         }
 
-        .nav-item:hover {
-            background-color: #eff7f0;
+        .nav-item.active {
+            border-bottom: 2px solid;
+            /* background-color: #eff7f0; */
         }
 
-        .about {
+        #about {
             display: flex;
             flex-wrap: wrap;
             height: 100vh;
@@ -57,7 +65,7 @@
             background: #eff4f7;
         }
 
-        .technology {
+        #technology {
             display: flex;
             flex-wrap: wrap;
             height: 100vh;
@@ -68,7 +76,7 @@
             background: #f9ed82;
         }
 
-        .contact {
+        #contact {
             display: flex;
             flex-wrap: wrap;
             height: 100vh;
@@ -104,11 +112,11 @@
     </noscript>
     <div id="app">
         <div class="nav-bar">
-            <span class="nav-item">About</span>
-            <span class="nav-item">Technology</span>
-            <span class="nav-item">Contact</span>
+            <span><a class="nav-item active" href="#about">About</a></span>
+            <span><a class="nav-item" href="#technology">Technology</a></span>
+            <span><a class="nav-item" href="#contact">Contact</a></span>
         </div>
-        <div class="about">
+        <div id="about" class="section">
             <div>
                 <img src="./img/dp.jpg" alt="Display Picture" class="dp">
             </div>
@@ -122,11 +130,11 @@
             </div>
         </div>
 
-        <div class="technology">
+        <div id="technology" class="section">
             <span>I work on Angular, React, Vue.js</span>
         </div>
 
-        <div class="contact">
+        <div id="contact" class="section">
             <div style="overflow: auto;">
                 <span> I'm available by</span>
                 <br>
@@ -145,13 +153,40 @@
                 <span>
                     <b>Linked In:</b>
                     <br>
-                    <a href="https://www.linkedin.com/in/naresh92">https://www.linkedin.com/in/naresh92</a>
+                    <a href="https://www.linkedin.com/in/naresh92"
+                        style="word-break: break-all;">https://www.linkedin.com/in/naresh92</a>
                 </span>
             </div>
         </div>
 
     </div>
+    <script>
+        let menuSection = document.querySelectorAll('.nav-item');
 
+        // for clickable event
+        menuSection.forEach(v => {
+            v.onclick = (() => {
+                setTimeout(() => {
+                    menuSection.forEach(j => j.classList.remove('active'))
+                    v.classList.add('active')
+                }, 300)
+            })
+        })
+
+        // for window scrolldown event
+
+        window.onscroll = (() => {
+            let mainSection = document.querySelectorAll('.section');
+
+            mainSection.forEach((v, i) => {
+                let rect = v.getBoundingClientRect().y
+                if (rect < window.innerHeight - 200) {
+                    menuSection.forEach(v => v.classList.remove('active'))
+                    menuSection[i].classList.add('active')
+                }
+            })
+        })
+    </script>
 </body>
 
 

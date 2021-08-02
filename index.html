@@ -13,6 +13,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;600&display=swap" rel="stylesheet">
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
     <link rel="stylesheet" href="css/home.css">
 </head>
 
@@ -25,12 +27,28 @@
     </noscript>
     <div id="app">
         <div class="nav-bar">
-            <span><a class="nav-item active" href="#about">About</a></span>
-            <span><a class="nav-item" href="#skills">Skills</a></span>
-            <span><a class="nav-item" href="#projects">Projects</a></span>
-            <span><a class="nav-item" href="#contact">Contact</a></span>
-            <span><a class="nav-item" href="./dist/index.html">Relax</a></span>
-            <!-- <span><a class="nav-item" href="#relax">Relax</a></span> -->
+            <div class="large-menu">
+                <span><a class="nav-item active" href="#about">About</a></span>
+                <span><a class="nav-item" href="#skills">Skills</a></span>
+                <span><a class="nav-item" href="#projects">Projects</a></span>
+                <span><a class="nav-item" href="#contact">Contact</a></span>
+                <!-- <span><a class="nav-item" href="./dist/index.html">Relax</a></span> -->
+                <span><a class="nav-item" href="#relax">Relax</a></span>
+            </div>
+
+            <div class="side-bar">
+                <div>
+                    <div class="menu"><a class="side-menu active" href="#about">About</a></div>
+                    <div class="menu"><a class="side-menu" href="#skills">Skills</a></div>
+                    <div class="menu"><a class="side-menu" href="#projects">Projects</a></div>
+                    <div class="menu"><a class="side-menu" href="#contact">Contact</a></div>
+                    <div class="menu"><a class="side-menu" href="#relax">Relax</a></div>
+                </div>
+            </div>
+
+            <div class="small-menu">
+                <i class="fa fa-bars menu-icon"></i>
+            </div>
 
         </div>
         <div id="about" class="section">
@@ -42,7 +60,8 @@
                 <span class="title">Naresh Kumar Nagarathinam</span>
                 <br>
                 <br>
-                <span>I'm a Software Engineer predominantly working on front end web applications. When i'm free i
+                <span>I'm a Software Engineer predominantly working on front end web applications. When i'm free
+                    i
                     cook, jog and watch movies.</span>
             </div>
         </div>
@@ -110,13 +129,24 @@
         </div>
 
         <div id="relax" class="section">
-            <iframe src="./dist/index.html" title="Game"></iframe>
+            <iframe src="./dist/index.html" scrolling="no"></iframe>
         </div>
 
     </div>
 
 
     <script src="js/scroll-spy.js"></script>
+    <script>
+        const sideBar = document.querySelector('.side-bar');
+        const menuElement = document.querySelector('.small-menu');
+        menuElement.addEventListener('click', function () {
+            if (sideBar.style.display === "flex") {
+                sideBar.style.display = "none";
+            } else {
+                sideBar.style.display = "flex";
+            }
+        });
+    </script>
 
 </body>
 

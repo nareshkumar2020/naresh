@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="icon" href="avatar.ico">
+
+    <title>Naresh's Portfolio</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;600&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link rel="stylesheet" href="css/home.css">
+</head>
+
+<body>
+    <noscript>
+        <strong>
+            We're sorry but app doesn't work properly without JavaScript enabled. Please enable it to
+            continue.
+        </strong>
+    </noscript>
+    <div id="app">
+        <div class="nav-bar">
+            <div class="large-menu">
+                <span><a class="nav-item active" href="#about">About</a></span>
+                <span><a class="nav-item" href="#skills">Skills</a></span>
+                <span><a class="nav-item" href="#projects">Projects</a></span>
+                <span><a class="nav-item" href="#contact">Contact</a></span>
+                <!-- <span><a class="nav-item" href="./dist/index.html">Relax</a></span> -->
+                <span><a class="nav-item" href="#relax">Relax</a></span>
+            </div>
+
+            <div class="side-bar">
+                <div>
+                    <div class="menu"><a class="side-menu active" href="#about">About</a></div>
+                    <div class="menu"><a class="side-menu" href="#skills">Skills</a></div>
+                    <div class="menu"><a class="side-menu" href="#projects">Projects</a></div>
+                    <div class="menu"><a class="side-menu" href="#contact">Contact</a></div>
+                    <div class="menu"><a class="side-menu" href="#relax">Relax</a></div>
+                </div>
+            </div>
+
+            <div class="small-menu">
+                <i class="fa fa-bars menu-icon"></i>
+            </div>
+
+        </div>
+        <div id="about" class="section">
+            <div>
+                <img src="./img/dp.jpg" alt="Display Picture" class="dp">
+            </div>
+
+            <div class="title-text">
+                <span class="title">Naresh Kumar Nagarathinam</span>
+                <br>
+                <br>
+                <span>I'm a Software Engineer predominantly working on front end web applications. When i'm free
+                    i
+                    cook, jog and watch movies.</span>
+            </div>
+        </div>
+
+        <div id="skills" class="section">
+            <div>
+                <b>Technologies</b>
+                <ul>
+                    <li>JavaScript</li>
+                    <li>TypeScript</li>
+                    <li>Html</li>
+                    <li>css</li>
+                    <li>Java</li>
+                </ul>
+                <b>Frameworks</b>
+                <ul>
+                    <li>Angular</li>
+                    <li>React</li>
+                    <li>React Native</li>
+                    <li>Vue.js</li>
+                    <li>Spring</li>
+                </ul>
+            </div>
+        </div>
+
+        <div id="projects" class="section">
+            <div>
+                <h2>I work on Angular, React, Vue.js</h2>
+                <br>
+                <br>
+                <br>
+                <b>Projects</b>
+                <ul>
+                    <li>Community Maintenace App</li>
+                    <li>Portfolio Proposal</li>
+                    <li>Fund Analytics Application</li>
+                    <li>Claims Portal</li>
+                </ul>
+            </div>
+        </div>
+
+        <div id="contact" class="section">
+            <div style="overflow: auto;">
+                <span> I'm available by</span>
+                <br>
+                <span>
+                    <b>Mobile:</b>
+                    <br>
+                    +1 437 989 2229
+                </span>
+                <br>
+                <span>
+                    <b>Email:</b>
+                    <br>
+                    naresh.helloworld@gmail.com
+                </span>
+                <br>
+                <span>
+                    <b>Linked In:</b>
+                    <br>
+                    <a href="https://www.linkedin.com/in/naresh92"
+                        style="word-break: break-all;">https://www.linkedin.com/in/naresh92</a>
+                </span>
+            </div>
+        </div>
+
+        <div id="relax" class="section">
+            <iframe src="./dist/index.html" scrolling="no"></iframe>
+        </div>
+
+    </div>
+
+
+    <script src="js/scroll-spy.js"></script>
+    <script>
+        const sideBar = document.querySelector('.side-bar');
+        const menuElement = document.querySelector('.small-menu');
+        menuElement.addEventListener('click', function () {
+            if (sideBar.style.display === "flex") {
+                sideBar.style.display = "none";
+            } else {
+                sideBar.style.display = "flex";
+            }
+        });
+    </script>
+
+</body>
+
+</html>
